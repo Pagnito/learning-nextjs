@@ -1,0 +1,7 @@
+$font-size: 100px;
+.about {
+  border:1px solid red;
+  p {
+    font-size: $font-size;
+  }
+}
