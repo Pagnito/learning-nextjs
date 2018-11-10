@@ -28,15 +28,20 @@ class Login extends React.Component {
       return (
         <div className={css.navBtns}>
           <Link href="/uploader"><div className={css.navBtn}>Create Gif</div></Link>
-          <div className={css.navBtn}>My Gifs</div>
+          <Link href="/account"><div className={css.navBtn}>My Gifs</div></Link>
           <a href="/api/logout"><div className={css.navBtn}>Log Out</div></a>
         </div>
       )
     } else {
       return (
-        <div className={css.login}>
-          <a href="/auth/facebook">Login with Facebook</a>
-        </div>
+        <div>
+          <div className={css.navBtnsOut}>
+            <Link href="/uploader"><div className={css.navBtnOut}>Create Gif</div></Link>
+          </div>
+          <div className={css.login}>
+            <a href="/auth/facebook">Login with Facebook</a>
+          </div>
+       </div>
       )
     }
   }

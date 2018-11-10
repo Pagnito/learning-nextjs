@@ -1,0 +1,61 @@
+@mixin theme {
+  background-color: #242628;
+  min-height: 100vh;
+  width:100%;
+}
+body {
+  padding: 0px;
+
+  margin:0px;
+  overflow-x:hidden;
+  background-color: #242628;
+}
+.account {
+  @include theme;
+  padding-top: 70px;
+  .contentHolder {
+    width:100%;
+    min-height:100vh;
+    display: flex;
+    border-top: 2px solid #34373A;
+    .accountInfo {
+      width:30%;
+      border-right: 2px solid #34373A;
+      min-height:100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .accPic {
+        border-radius: 100px;
+        height:100px;
+        width:100px;
+        margin-top: 20px;
+        border:2px solid white;
+      }
+      .userName {
+        color: white;
+        font-size: 30px;
+        margin-top: 20px;
+        font-family: 'quicksand';
+      }
+    }
+    .myGallery {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      width:70%;
+      .accountGif {
+        opacity: 0;
+        height:250px !important;
+        width:33% !important;
+        animation: showAccGif linear .3s forwards;
+      }
+    }
+  }
+}
+@keyframes showAccGif {
+  100% {
+    opacity:1;
+  }
+}

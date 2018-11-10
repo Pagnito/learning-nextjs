@@ -20,6 +20,7 @@ body {
     display:flex;
     align-content: flex-start;
     .form {
+    
       box-sizing: border-box;
       border: 2px solid #242628;
       background-color: rgba(152,95,199,.6);
@@ -31,6 +32,7 @@ body {
       }
       .gifConfig {
         display: flex;
+        justify-content: space-between;
         flex-direction: column;
         .inputHolder {
             display: flex;

@@ -9,6 +9,7 @@ class Uploader extends React.Component {
     super(props);
     this.state = {
       user: null,
+      name:'',
       fileList: [],
       imgNum: 0,
       errors: {},
@@ -16,8 +17,8 @@ class Uploader extends React.Component {
       interval: 0.3,
       duration: 1,
       numberFrames: 10,
-      height: 400,
-      width: 400,
+      height: 200,
+      width: 200,
       gifErrors: {
         interval: "Interval",
         duration: "Duration",
@@ -172,7 +173,7 @@ class Uploader extends React.Component {
                 className={css.customUpBtn}
                 type="button"
               >
-                {this.state.fileList.length > 0 ? "Preview" : "Camera"}
+                {this.state.fileList.length > 0 ? "Preview" : "Use Camera"}
               </button>
             </div>
 
@@ -248,7 +249,7 @@ class Uploader extends React.Component {
                 onClick={this.submitGif}
                 type="button"
               >
-                Create
+                Upload
             </div>
           </form>
 

@@ -27,7 +27,7 @@ nextApp.prepare()
   const app = express();
   app.use(favicon(path.join(__dirname, 'static', 'favicon.png')))
   app.use(compression())
-  app.use(bodyParser.json({limit: '4MB'}));
+  app.use(bodyParser.json({limit: '5MB'}));
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(
     cookieSession({
