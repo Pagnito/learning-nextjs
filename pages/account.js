@@ -1,6 +1,8 @@
 import css from '../styles/account.scss';
 import Header from '../components/header';
+import MobileNav from '../components/mobileNav';
 import axios from 'axios';
+import Head from 'next/head';
 class Account extends React.Component {
   constructor(props){
     super(props)
@@ -14,7 +16,6 @@ class Account extends React.Component {
       this.setState({user:res.data})
     })
     axios.get('/api/getMyGifs').then(res=>{
-      console.log(res.data)
       this.setState({myGifs:res.data})
     }).catch(err=>{console.log(err)})
   }
@@ -64,14 +65,20 @@ class Account extends React.Component {
   render() {
     return (
       <div className={css.account}>
+        <Head>
+          <title>Giffer</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+          <link rel="shortcut icon" href="../static/favicon.png"/>
+        </Head>
         <Header user={this.state.user}/>
+        <MobileNav/>
         <div className={css.contentHolder}>
           {this.renderAccountInfo()}
           <div className={css.myGallery}>
             {this.renderGallery()}
           </div>
         </div>
-
+        
       </div>
     );
   }

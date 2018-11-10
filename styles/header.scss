@@ -20,4 +20,19 @@
     display: flex;
     justify-content: center;
   }
+  .MobNavBtn {
+    width: 30px;
+    height:30px;
+    cursor: pointer;
+    z-index: 101;
+    position: fixed;
+    top:15px;
+    right:10px;
+  }
+}
+@media(min-width:751px){
+  .MobNavBtn {
+    cursor: pointer;
+    display:none;
+  }
 }

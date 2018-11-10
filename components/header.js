@@ -5,7 +5,8 @@ class Header extends React.Component {
   constructor(props){
     super(props)
     this.state={
-      user:null
+      user:null,
+      navVisible: false
     }
   }
   componentDidUpdate(prevProps){
@@ -13,11 +14,17 @@ class Header extends React.Component {
       this.setState({user:this.props.user})
     }
   }
+  showNav = () => {
+    let nav = document.getElementById('mobNavBg');
+    nav.style.display = 'flex';
+  }
+  
   render() {
     return (
       <div className={css.header}>
         <div className={css.logo}><Link href="/"><a>Giffer</a></Link></div>
         <LoginBtn user={this.state.user}/>
+        <img id="mobNavBtn" onClick={this.showNav} className={css.MobNavBtn} src='../static/heartNavIcon.png' />
       </div>
     );
   }
